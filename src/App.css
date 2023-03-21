@@ -1,0 +1,41 @@
+
+
+.app-wrapper {
+    display: grid;
+    margin: 0 4%;
+
+    grid-template-areas: "h h" "n c";
+
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: 10px;*/
+}
+
+.header {
+    background-color: darkcyan;
+    grid-area: h;
+}
+
+.nav {
+    background-color: aqua;
+    grid-area: n;
+}
+
+.profile {
+    background-color: lightseagreen;
+    grid-area: c;
+}
+
+.header img {
+    width: 60px;
+    margin: 10px;
+}
+
+.img_main {
+    width: 100%;
+    max-height: 150px;
+}
+
+.img_earth {
+    width: 100px;
+}
