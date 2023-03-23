@@ -1,0 +1,11 @@
+
+
+
+.profile {
+    background-color: lightseagreen;
+    grid-area: c;
+}
+
+.item {
+    color: lightblue;
+}
