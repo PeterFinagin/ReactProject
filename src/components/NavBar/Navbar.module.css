@@ -7,7 +7,12 @@
 }
 
 .item {
-    color: blue;
+    color: white;
+}
+
+
+.item a {
+    color: white;
 }
 
 .item.active {
