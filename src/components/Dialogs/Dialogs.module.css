@@ -1,8 +1,22 @@
 
-
-
 .dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
     background-color: lightsteelblue;
-    padding: 20px;
 }
 
+.dialogsItem {
+    padding: 10px;
+}
+
+.dialogs .dialog {
+    padding: 10px;
+}
+
+.massages {
+    padding: 10px;
+}
+
+.massages .massage {
+    padding: 10px;
+}
