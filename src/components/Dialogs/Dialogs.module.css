@@ -20,3 +20,7 @@
 .massages .massage {
     padding: 10px;
 }
+
+.dialog a {
+    color: white;
+}

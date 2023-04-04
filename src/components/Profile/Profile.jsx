@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./Profile.module.css"
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
 
 
 const Profile = () => {
     return (
         <div>
-            <div className={styles.profile}>
-                <img src="https://cdn.eso.org/images/screen/vlt-mw-potw.jpg" alt="Panorama"/>
-            </div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     )
