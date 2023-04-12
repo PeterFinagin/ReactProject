@@ -1,12 +1,17 @@
 
-
-
 .header {
+    display: flex;
     grid-area: h;
-    background-color: cadetblue;
+    background-color: lightslategrey;
+    justify-content: center;
 }
 
 .header img {
-    width: 70px;
-    margin: 10px;
+    width: 80px;
+    margin: 15px;
 }
+
+.header h1 {
+
+}
+
