@@ -1,7 +1,8 @@
 
 .header {
-    display: flex;
+    display: grid;
     grid-area: h;
+    grid-template-columns: 1fr 5fr;
     background-color: lightslategrey;
     justify-content: center;
 }
@@ -12,6 +13,7 @@
 }
 
 .header h1 {
-
+    text-align: center;
+    float: none;
 }
 

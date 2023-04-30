@@ -1,33 +1,40 @@
 import React from "react";
-import "./App.css";
-import Header from "./components/Header/Header";
-import Navbar from "./components/NavBar/Navbar";
-import {Route, BrowserRouter, Routes} from "react-router-dom";
-import Dialogs from "./components/Dialogs/Dialogs";
+import Header from './components/Header/Header.jsx';
+import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import News from "./components/News/News";
-import Settings from "./components/Settings/Settings";
+import styles from "./App.module.css"
+import Names from "./components/Names/Names";
+import Settings from "./components/Profile/Settings/Settings";
+import Dialogs from "./components/Dialogs/Dialogs";
+import {Route, Routes} from "react-router-dom";
+import {updateNewMessage} from "./state";
 
 
 const App = (props) => {
     return (
-        <BrowserRouter>
-            <div className="appWrapper">
-                <Header/>
-                <Navbar/>
-                <div className="appWrapperContent">
-                    <Routes>
-                        <Route  path="/dialogs" element={<Dialogs/>}/>
-                        <Route path="/profile" element={<Profile/>}/>
-                        <Route path="/news" element={<News/>}/>
-                        <Route path="/settings" element={<Settings/>}/>
-                    </Routes>
-                </div>
+        <div className={styles.appWrapper}>
+            <Header/>
+            <Navbar/>
+            <div className="appWrapperContent">
+                <Routes>
+                    <Route path="/profile" element={<Profile
+                        profilePage={props.state.profilePage}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}
+                    />}/>
+                    <Route path="/names" element={<Names namesPage={props.state.sidebar}/>}/>
+                    <Route path="/settings" element={<Settings/>}/>
+                    <Route path="/massages" element={<Dialogs
+                        updateNewName={props.updateNewName}
+                        updateNewMessage={props.updateNewMessage}
+                        addMessage={props.addMessage}
+                        addName={props.addName}
+                        dialogsPage={props.state.dialogsPage}/>}/>
+                </Routes>
             </div>
-        </BrowserRouter>
+        </div>
     )
 }
 
 export default App;
-
 

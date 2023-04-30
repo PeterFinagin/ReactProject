@@ -5,22 +5,25 @@ import {NavLink} from "react-router-dom";
 
 
 const Navbar = (props) => {
-        return (
-    <nav className={styles.nav}>
-            <div className={styles.item}>
-                <NavLink to="/profile">Profile</NavLink>
+    let linkClass = ({ isActive }) =>
+        isActive ? styles.active : styles.item
+
+    return (
+        <nav className={styles.nav}>
+            <div>
+                <NavLink className={linkClass}  to="/profile">Profile</NavLink>
             </div>
-            <div className={styles.item}>
-                <NavLink to="/massages">Messages</NavLink>
+            <div>
+                <NavLink className={linkClass} to="/massages">Messages</NavLink>
             </div>
-            <div className={styles.item}>
-                <NavLink to="/news">News</NavLink>
+            <div>
+                <NavLink className={linkClass}to="/names">Names</NavLink>
             </div>
-            <div className={styles.item}>
-                <NavLink to="/settings">Settings</NavLink>
+            <div>
+                <NavLink className={linkClass} to="/settings">Settings</NavLink>
             </div>
         </nav>
-        )
+    )
 }
 
 export default Navbar;

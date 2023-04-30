@@ -1,0 +1,26 @@
+
+
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: lightskyblue;
+    padding: 20px;
+}
+
+.dialogs a {
+    color: white;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.addMessage {
+    padding: 10px;
+    background-color: lightskyblue;
+}
