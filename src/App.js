@@ -7,7 +7,6 @@ import Names from "./components/Names/Names";
 import Settings from "./components/Profile/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
-import {updateNewMessage} from "./state";
 
 
 const App = (props) => {
