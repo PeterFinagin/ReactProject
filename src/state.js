@@ -70,52 +70,6 @@ let store = {
             this._callSubscriber();
         }
         },
-
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber();
-    },
-
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber();
-    },
-
-    addName()  {
-        let newName = {
-            id: 10,
-            name: this._state.dialogsPage.newParticipant
-        }
-        this._state.dialogsPage.dialogs.push(newName);
-        this._state.dialogsPage.newParticipant = '';
-        this._callSubscriber();
-    },
-
-    addMessage() {
-        let newMessage = {
-            id: 10,
-            message: this._state.dialogsPage.newMessageText
-        }
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber();
-    },
-
-    updateNewName(newName) {
-        this._state.dialogsPage.newParticipant = newName;
-        this._callSubscriber();
-    },
-
-    updateNewMessage(newName) {
-        this._state.dialogsPage.newMessageText = newName;
-        this._callSubscriber();
-    }
 }
 
 export default store;
