@@ -20,10 +20,11 @@ const App = (props) => {
                         profilePage={props.state.profilePage}
                         dispatch={props.dispatch}
                     />}/>
-                    <Route path="/names" element={<Names namesPage={props.state.sidebar}/>}/>
+                    <Route path="/names" element={<Names namesPage={props.state.namesPage}/>}/>
                     <Route path="/settings" element={<Settings/>}/>
                     <Route path="/massages" element={<Dialogs
-                        dialogsPage={props.state.dialogsPage}/>}/>
+                        store={props.store}
+                    />}/>
                 </Routes>
             </div>
         </div>
