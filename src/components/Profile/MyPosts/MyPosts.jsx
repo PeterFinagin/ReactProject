@@ -1,37 +1,48 @@
 import React from "react";
 import styles from './MyPosts.module.css'
+import {Field, reduxForm} from "redux-form";
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../state";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Textarea} from "../../../common/formsControls/FormsControls";
 
+const maxLength10 = maxLengthCreator(10)
+
+const AddNewPostForm = (props) => {
+    return (<form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component={Textarea}
+                       name="newPostText"
+                       validate={[required, maxLength10]}
+                />
+            </div>
+            <div>
+                <button>Add post</button>
+            </div>
+        </form>
+    )
+}
+
+const AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
 const MyPosts = (props) => {
     let postsElement = props.posts
         .map((post, index) => <Post key={index} message={post.message} likesCount={post.likesCount}/>)
 
-    let newPostElement = React.createRef();
-
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
-    }
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+    let onAddPost= (values) => {
+        props.addPost(values.newPostText)
     }
     return (
         <div className={styles.myPosts}>
             <h2>My posts</h2>
-            <textarea onChange={onPostChange}
-                      value={props.newPostText}
-                      ref={newPostElement}
-                      cols="20" rows="2"></textarea>
             <div>
-                <button onClick={addPost}>Add post</button>
+           <AddNewPostFormRedux onSubmit={onAddPost}/>
             </div>
+            <div>
             {postsElement}
+            </div>
         </div>
     )
-
 }
+
 
 export default MyPosts;

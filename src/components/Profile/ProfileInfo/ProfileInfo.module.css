@@ -7,3 +7,12 @@
     width: 100%;
     height: auto;
 }
+
+.profileInfo {
+    padding: 10px;
+}
+
+.ava img {
+    width: 200px;
+    height: 200px;
+}

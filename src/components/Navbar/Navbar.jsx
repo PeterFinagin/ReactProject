@@ -17,10 +17,13 @@ const Navbar = (props) => {
                 <NavLink className={linkClass} to="/massages">Messages</NavLink>
             </div>
             <div>
-                <NavLink className={linkClass}to="/names">Names</NavLink>
+                <NavLink className={linkClass} to="/settings">Settings</NavLink>
             </div>
             <div>
-                <NavLink className={linkClass} to="/settings">Settings</NavLink>
+                <NavLink className={linkClass} to="/users">Users</NavLink>
+            </div>
+            <div>
+                <NavLink className={linkClass} to="/login">Login</NavLink>
             </div>
         </nav>
     )

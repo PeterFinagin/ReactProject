@@ -1,0 +1,29 @@
+body {
+    background-color: indigo;
+}
+.usersStyle {
+    padding: 20px;
+    background-color: plum;
+    margin: 10px;
+}
+
+.usersStyle img {
+    width: 64px;
+    height: 60px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.pagesCount {
+    text-align: center;
+}
+
+.selectedPage {
+    color: plum;
+}
+.justPage {
+    color: white;
+}

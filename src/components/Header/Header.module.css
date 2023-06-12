@@ -2,8 +2,8 @@
 .header {
     display: grid;
     grid-area: h;
-    grid-template-columns: 1fr 5fr;
-    background-color: lightslategrey;
+    grid-template-columns: 1fr 5fr 1fr;
+    background-image: url("https://cdn.eso.org/images/screen/vlt-mw-potw.jpg");
     justify-content: center;
 }
 
@@ -15,5 +15,14 @@
 .header h1 {
     text-align: center;
     float: none;
+}
+
+.loginBlock {
+    text-align: center;
+    padding-top: 30px;
+}
+.loginBlock a {
+    text-decoration: none;
+    color: gold;
 }
 
