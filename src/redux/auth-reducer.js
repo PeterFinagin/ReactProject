@@ -4,7 +4,7 @@ import {stopSubmit} from "redux-form";
 const SET_USER_DATA = "SET_USER_DATA";
 
 let initialState =  {
-    id: null,
+    userId: null,
     email: null,
     login: null,
     isAuth: false
@@ -26,7 +26,7 @@ export const setAuthUserData = (userId, email, login, isAuth) =>
     ({type: SET_USER_DATA, payload: {userId, email, login, isAuth}})
 
 export const getAuthUserData = () => (dispatch) => {
-    authAPI.me()
+    return authAPI.me()
         .then(response => {
             if (response.data.resultCode === 0) {
                 let {id,login, email} = response.data.data
