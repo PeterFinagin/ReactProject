@@ -7,10 +7,10 @@ import {login} from "../../redux/auth-reducer";
 import {Navigate} from "react-router-dom";
 import styles from "../../common/formsControls/FormsControls.module.css"
 
-const LoginForm = (props) => {
+const LoginForm = (handleSubmit, error) => {
     const maxLength30 = maxLengthCreator(30)
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field validate={[required, maxLength30]}
                        placeholder={"Email"}
@@ -30,7 +30,7 @@ const LoginForm = (props) => {
                        component={Input}/>
                 <span>Remember me</span>
             </div>
-            {props.error ? <div className={styles.errorSummary}>{props.error}</div> : undefined}
+            {error ? <div className={styles.errorSummary}>{error}</div> : undefined}
             <div>
                 <button>Login</button>
             </div>
@@ -40,11 +40,11 @@ const LoginForm = (props) => {
 
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
-const Login = (props) => {
+const Login = (login, isAuth) => {
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe)
+        login(formData.email, formData.password, formData.rememberMe)
     }
-    if (props.isAuth) {
+    if (isAuth) {
         return <Navigate replace to={"/profile"}/>
     }
     return <div>
